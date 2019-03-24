@@ -9,24 +9,6 @@ import { List, ListItem } from 'react-native-elements'
 import sideMenu from '../components/sideMenu';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-//import DrawerScreen from '../app/stacks/drawerScreen';
-// import {
-//   StackNavigator
-// } from 'react-navigation';
-
-// import menu from '../app/index.js';
-// const Navigator = StackNavigator({
-//   DrewerStack: {screen: DrawerStack}
-// },{
-//     headerMode: 'none',
-//     initialRouteName: 'drawerStack'
-// })
-
-// export default Navigator;
-
-{/* <menu></menu> */}
-
-import sideD from '../screens/sideScreen.js'
 import {
   Image,
   Platform,
@@ -131,6 +113,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.welcomeContainer}>
           
       <MenuButton/>
+      <Text>ARQUEOLOGIA E HISTORIA</Text>
             <Image
               source={logo}
               style={styles.welcomeImage}
@@ -157,11 +140,11 @@ export default class HomeScreen extends React.Component {
               /> */}
 
             
-
+{/* 
               <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
-                <Image source={imagen}/>
-                <Image source={imagen2}/>
-              </View>
+                <Image source={imagen3}/>
+                <Image source={imagen3}/>
+              </View> */}
 
               
               

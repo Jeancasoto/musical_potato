@@ -10,7 +10,8 @@ import {
 
 import React from 'react';
 
-import DrawerScreen from './drawerScreen';
+//import DrawerScreen from './drawerScreen';
+import DrawerScreen from '../components/screen1';
 
 const DrawerNavigation = StackNavigator({
     DrawerStack: {screen: DrawerScreen}

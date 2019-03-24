@@ -131,6 +131,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.welcomeContainer}>
           
       <MenuButton/>
+      <Text>NEGOCIOS</Text>
             <Image
               source={logo}
               style={styles.welcomeImage}
@@ -158,10 +159,10 @@ export default class HomeScreen extends React.Component {
 
             
 
-              <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
-                <Image source={imagen}/>
-                <Image source={imagen2}/>
-              </View>
+              {/* <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
+                <Image source={imagen3}/>
+                <Image source={imagen3}/>
+              </View> */}
 
               
               

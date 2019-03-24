@@ -1,17 +1,77 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import Islas from '../screens/islas';
+import Playas from '../screens/playas';
+import Buceo from '../screens/Buceo';
+import Arqueologia_Historia from '../screens/Arqueologia_Historia';
+import Cuidades_Coloniales from '../screens/Cuidades_Coloniales';
+import Naturaleza from '../screens/Naturaleza';
+import Aviturismo from '../screens/Aviturismo';
+import Aventura from '../screens/Aventura';
+import Gastronomia_Cultura from '../screens/Gastronomia_Cultura';
+import Negocios from '../screens/Negocios';
+import MICE from '../screens/mice';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-});
 
-HomeStack.navigationOptions = {
+//const WIDTH = Dimensions.get('window').width;
+
+// const DrawerConfig ={
+//   drawerWidth: WIDTH*0.83,
+// }
+
+const DrawerNavigator = createDrawerNavigator(
+  {
+    Home:{
+      screen: HomeScreen
+    },
+    Islas:{
+      screen: Islas
+    },
+    Playas:{
+      screen: Playas
+    },
+    Buceo:{
+      screen: Buceo
+    },
+    Arqueologia_Historia:{
+      screen: Arqueologia_Historia
+    },
+    Cuidades_Coloniales:{
+      screen: Cuidades_Coloniales
+    },
+    Naturaleza:{
+      screen: Naturaleza
+    },
+    Aviturismo:{
+      screen: Aviturismo
+    },
+    Aventura:{
+      screen: Aventura
+    },
+    Gastronomia_Cultura:{
+      screen: Gastronomia_Cultura
+    },
+    Negocios:{
+      screen: Negocios
+    },
+    MICE:{
+      screen: MICE
+    },
+  },
+  //DrawerConfig
+);
+
+//const HomeStack = createStackNavigator({
+//  Home: HomeScreen,
+//});
+
+DrawerNavigator.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -54,7 +114,8 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
+  DrawerNavigator,
+  //HomeStack,
   LinksStack,
   SettingsStack,
 });
