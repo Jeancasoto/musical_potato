@@ -83,6 +83,7 @@ firebase.database().ref('atractivos').once('value', (data) => {
 }
 
 //------------------
+console.log('Cargo buceo')
 
 //------------------
 
@@ -156,8 +157,19 @@ export default class HomeScreen extends React.Component {
                   justifyContent: 'space-around',
                 }}
               /> */}
-
             
+
+        <Image
+          style={{flexGrow: 1, width: 'auto', height: 350, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+          source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-1.jpg'}}
+          
+        />
+          <View style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 300, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Your overlay text</Text>
+    </View>
+          style={{flexGrow: 1, width: 'auto', height: 350, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+          source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-2.jpg'}}
+        />
 
               {/* <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
                 <Image source={imagen3}/>

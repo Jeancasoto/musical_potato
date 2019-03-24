@@ -19,12 +19,6 @@ import Negocios from '../screens/Negocios';
 import MICE from '../screens/mice';
 
 
-//const WIDTH = Dimensions.get('window').width;
-
-// const DrawerConfig ={
-//   drawerWidth: WIDTH*0.83,
-// }
-
 const DrawerNavigator = createDrawerNavigator(
   {
     Home:{

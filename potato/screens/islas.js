@@ -28,6 +28,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import sideD from '../screens/sideScreen.js'
 import {
+  ImageBackground,
   Image,
   Platform,
   ScrollView,
@@ -44,7 +45,8 @@ function prueba(){
   
 }
 
-function retrieveData(){
+console.log('antes de cargar islas')
+
 
 //<DrawerScreen></DrawerScreen>
 var config = {
@@ -68,11 +70,31 @@ firebase.database().ref('atractivos').once('value', (data) => {
   var keys = Object.keys(datos);
   //console.log(keys);
   for (var i =0; i< keys.length; i++){
-    var k = keys[i];
-    var name = datos[k].name;
-    //var dato = datos[k].dato;
-    console.log(name);
-  }
+    var k = keys[0];
+    var lugares = datos[k].lugares;
+    var subkeys= Object.keys(lugares);
+    
+
+    var f = subkeys[0];
+    var fotos = lugares[f].fotos;
+    var keylinks = Object.keys(fotos);
+    //var links = keylinks.data();
+    
+    
+
+
+    //for (var j =0; j< subkeys.length; j++){
+      
+      //var sk = subkeys[j];
+      
+      //} 
+      //var dato = datos[k].dato;
+      //console.log('-----',subkeys);
+    }
+
+    console.log('-----',keylinks);
+    //------------------->console.log('-----',subkeys[0]);
+
   // <sideD></sideD>
   //console.log(data.val());
 })
@@ -80,9 +102,10 @@ firebase.database().ref('atractivos').once('value', (data) => {
 //var ref = database.ref('atractivos');
 //ref.on('values', gotData, errData);
 
-}
+
 
 //------------------
+console.log('Cargo islas')
 
 //------------------
 
@@ -115,7 +138,15 @@ function errData(data){
  
 }
 
+
+function prueba(){
+  console.log('HOLA PERRO');
+  //alert('HOLA PERRO');
+ 
+}
+
 import MenuButton from '../app/components/MenuButton'
+
 
 export default class HomeScreen extends React.Component {
 
@@ -157,12 +188,46 @@ export default class HomeScreen extends React.Component {
                 }}
               /> */}
 
-            
+        {/* <Image
+          style={{flexGrow: 1, width: 'auto', height: 350, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+          source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-1.jpg'}}
+        />
+       
+         <Image
+          style={{flexGrow: 1, width: 'auto', height: 350, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+          source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-2.jpg'}}
+        /> */}
 
-              <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
-                <Image source={imagen3}/>
-                <Image source={imagen3}/>
-              </View>
+        <TouchableOpacity >
+
+<ImageBackground 
+  source={{ uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-1.jpg' }}
+  style={{flexGrow: 1, width: 'auto', height: 350, justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}
+>
+  <Text 
+    style={{
+      fontSize: 30,
+      fontWeight: 'bold',
+      color: 'white',
+      position: 'absolute', // child
+      justifyContent: 'center', 
+      alignItems: 'center'
+      // bottom: 0, // position where you want
+      // left: 0
+    }}
+    >
+    Amapala, Valle
+  </Text>
+  
+</ImageBackground>
+
+
+
+    </TouchableOpacity>
+              {/* <View style={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>      
+                <Image source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-1.jpg'}}/>
+                <Image source={{uri: 'http://www.honduras.travel/images/carousel/islas/carousel-amapala-2.jpg'}}/>
+              </View> */}
 
               
               
